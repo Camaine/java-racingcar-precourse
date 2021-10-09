@@ -18,6 +18,10 @@ public class GameView {
         }
     }
 
+    public static void printGameResult(GameModel model, String winners){
+        System.out.println(GameNoticeModel.printWinnerContextPrefix + winners + GameNoticeModel.printWinnerContextPostfix);
+    }
+
     public static void printGameInfo(String info){
         System.out.println(info);
     }

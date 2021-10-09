@@ -6,12 +6,22 @@ public class GameModel {
 
     public static final String progressBar = "-";
     public static final String userProgressDivder = " : ";
+    public static final String winnerDivder = ",";
 
     private String[] carList;
     private int racingCnt;
     private int gameProgress;
     private int[] carProceedData;
     private String[] carProgressBarLists;
+    private int topProgress;
+
+    public int getTopProgress() {
+        return topProgress;
+    }
+
+    public void setTopProgress(int topProgress) {
+        this.topProgress = topProgress;
+    }
 
     public String[] getCarProgressBarLists() {
         return carProgressBarLists;

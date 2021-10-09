@@ -2,6 +2,7 @@ package racinggame.controller;
 
 import racinggame.model.GameModel;
 import racinggame.model.GameNoticeModel;
+import racinggame.service.GameFinishService;
 import racinggame.service.GamePrepareService;
 import racinggame.service.GameProceedService;
 import racinggame.view.GameView;
@@ -10,6 +11,7 @@ public class GameController {
 
     private GamePrepareService prepareService = new GamePrepareService();
     private GameProceedService proceedService =  new GameProceedService();
+    private GameFinishService finishService = new GameFinishService();
     private GameModel gameModel = new GameModel();
 
     public void getCarList(){
@@ -38,9 +40,10 @@ public class GameController {
         for(int i = 0 ; i < gameModel.getRacingCnt() ; i++){
             proceedService.doRace(gameModel);
         }
+        finishGame();
     }
 
     public void finishGame(){
-
+        finishService.getWinnerResult(gameModel);
     }
 }

@@ -6,13 +6,13 @@ import racinggame.model.GameNoticeModel;
 
 public class GameView {
 
-    public static String getCarNames(GameModel model){
-        String carList = Console.readLine();
-        return carList;
+    public static String getUserInput(GameModel model){
+        String input = Console.readLine();
+        return input;
     }
 
-    public static void printReqCarList(){
-        System.out.println(GameNoticeModel.reqCarList);
+    public static void printReqUserInput(String notice){
+        System.out.println(notice);
     }
 
     public static void printError(String error){

@@ -1,15 +1,21 @@
 package racinggame.service;
 
 import racinggame.model.GameModel;
+import racinggame.model.GameNoticeModel;
 import racinggame.view.GameView;
 
 public class GamePrepareService {
 
     public boolean getCarNames(GameModel model){
-        String userInputCarList = GameView.getCarNames(model);
+        String userInputCarList = GameView.getUserInput(model);
         if(saveUserInput(userInputCarList,model)){
             return true;
         }
+        return false;
+    }
+
+    public boolean getRacingCnt(GameModel model){
+        GameView.printReqUserInput(GameNoticeModel.reqRacingCnt);
         return false;
     }
 

@@ -1,6 +1,7 @@
 package racinggame.controller;
 
 import racinggame.model.GameModel;
+import racinggame.model.GameNoticeModel;
 import racinggame.service.GamePrepareService;
 import racinggame.view.GameView;
 
@@ -10,7 +11,7 @@ public class GameController {
     private GameModel gameModel = new GameModel();
 
     public void prepareGame(){
-        GameView.printReqCarList();
+        GameView.printReqUserInput(GameNoticeModel.reqCarList);
         if(prepareService.getCarNames(gameModel)){
             playGame();
             return;

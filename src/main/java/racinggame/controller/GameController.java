@@ -10,14 +10,18 @@ public class GameController {
     private GamePrepareService prepareService = new GamePrepareService();
     private GameModel gameModel = new GameModel();
 
-    public void prepareGame(){
+    public void getCarList(){
         GameView.printReqUserInput(GameNoticeModel.reqCarList);
         if(prepareService.getCarNames(gameModel)){
-            playGame();
+            getRacingCnt();
             return;
         }
-        prepareGame();
+        getCarList();
         return;
+    }
+
+    public void getRacingCnt(){
+
     }
 
     public void playGame(){

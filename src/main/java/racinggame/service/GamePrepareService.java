@@ -16,6 +16,7 @@ public class GamePrepareService {
 
     public boolean getRacingCnt(GameModel model){
         GameView.printReqUserInput(GameNoticeModel.reqRacingCnt);
+
         return false;
     }
 

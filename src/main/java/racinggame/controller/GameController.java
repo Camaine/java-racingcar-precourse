@@ -3,15 +3,17 @@ package racinggame.controller;
 import racinggame.model.GameModel;
 import racinggame.model.GameNoticeModel;
 import racinggame.service.GamePrepareService;
+import racinggame.service.GameProceedService;
 import racinggame.view.GameView;
 
 public class GameController {
 
     private GamePrepareService prepareService = new GamePrepareService();
+    private GameProceedService proceedService =  new GameProceedService();
     private GameModel gameModel = new GameModel();
 
     public void getCarList(){
-        GameView.printReqUserInput(GameNoticeModel.reqCarList);
+        GameView.printGameInfo(GameNoticeModel.reqCarList);
         if(prepareService.getCarNames(gameModel)){
             getRacingCnt();
             return;
@@ -21,8 +23,10 @@ public class GameController {
     }
 
     public void getRacingCnt(){
-        GameView.printReqUserInput(GameNoticeModel.reqRacingCnt);
+        GameView.printGameInfo(GameNoticeModel.reqRacingCnt);
         if(prepareService.getRacingCnt(gameModel)){
+            GameView.printGameInfo(GameNoticeModel.printResultContext);
+            proceedService.initializeGameData(gameModel);
             playGame();
             return;
         }
@@ -31,7 +35,9 @@ public class GameController {
     }
 
     public void playGame(){
-
+        for(int i = 0 ; i < gameModel.getRacingCnt() ; i++){
+            proceedService.doRace(gameModel);
+        }
     }
 
     public void finishGame(){

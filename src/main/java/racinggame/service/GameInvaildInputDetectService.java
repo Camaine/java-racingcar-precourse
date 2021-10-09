@@ -23,7 +23,7 @@ public class GameInvaildInputDetectService extends Exception{
         try{
             cnt = Integer.parseInt(racingCnt);
         }catch (Exception e){
-            GameView.printError(GameErrorModel.error + GameErrorModel.racingCntNotInteger);
+            GameView.printGameInfo(GameErrorModel.error + GameErrorModel.racingCntNotInteger);
             return;
         }
         if(cnt == 0){
@@ -32,17 +32,17 @@ public class GameInvaildInputDetectService extends Exception{
     }
 
     private static void racingCntIsZero(){
-        GameView.printError(GameErrorModel.error + GameErrorModel.racingCntIsZero);
+        GameView.printGameInfo(GameErrorModel.error + GameErrorModel.racingCntIsZero);
         throw new IllegalArgumentException(GameErrorModel.error + GameErrorModel.racingCntIsZero);
     }
 
     private static void carNameExceedFive(){
-        GameView.printError(GameErrorModel.error + GameErrorModel.carNameExceedFive);
+        GameView.printGameInfo(GameErrorModel.error + GameErrorModel.carNameExceedFive);
         throw new IllegalArgumentException(GameErrorModel.error + GameErrorModel.carNameExceedFive);
     }
 
     private static void carNameNotExist(){
-        GameView.printError(GameErrorModel.error + GameErrorModel.carNameNotExist);
+        GameView.printGameInfo(GameErrorModel.error + GameErrorModel.carNameNotExist);
         throw new IllegalArgumentException(GameErrorModel.error + GameErrorModel.carNameNotExist);
     }
 }

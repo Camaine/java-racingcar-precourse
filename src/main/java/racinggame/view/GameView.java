@@ -11,11 +11,14 @@ public class GameView {
         return input;
     }
 
-    public static void printReqUserInput(String notice){
-        System.out.println(notice);
+    public static void printGameProgress(GameModel model, int carNo){
+        System.out.println(model.getCarList()[carNo] + GameModel.userProgressDivder + model.getCarProgressBarLists()[carNo]);
+        if(model.getCarList().length == carNo + 1){
+            System.out.println("");
+        }
     }
 
-    public static void printError(String error){
-        System.out.println(error);
+    public static void printGameInfo(String info){
+        System.out.println(info);
     }
 }

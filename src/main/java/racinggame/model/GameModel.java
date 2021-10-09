@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 public class GameModel {
 
-    private String userInputCarList;
     private String[] carList;
+    private int racingCnt;
 
-    public String getUserInputCarList() {
-        return userInputCarList;
+    public int getRacingCnt() {
+        return racingCnt;
     }
 
-    public void setUserInputCarList(String userInputCarList) {
-        this.userInputCarList = userInputCarList;
+    public void setRacingCnt(int racingCnt) {
+        this.racingCnt = racingCnt;
     }
 
     public String[] getCarList() {

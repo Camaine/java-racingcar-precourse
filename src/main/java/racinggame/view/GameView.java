@@ -6,7 +6,7 @@ import racinggame.model.GameNoticeModel;
 
 public class GameView {
 
-    public static String getUserInput(GameModel model){
+    public static String getUserInput(){
         String input = Console.readLine();
         return input;
     }

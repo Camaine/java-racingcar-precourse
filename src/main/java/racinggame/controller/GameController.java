@@ -21,7 +21,13 @@ public class GameController {
     }
 
     public void getRacingCnt(){
-
+        GameView.printReqUserInput(GameNoticeModel.reqRacingCnt);
+        if(prepareService.getRacingCnt(gameModel)){
+            playGame();
+            return;
+        }
+        getRacingCnt();
+        return;
     }
 
     public void playGame(){

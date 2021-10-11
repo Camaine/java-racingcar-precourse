@@ -13,6 +13,16 @@ public class GameModel {
     private int gameProgress;
     private int[] carProceedData;
     private String[] carProgressBarLists;
+
+    public String getWinner() {
+        return winner;
+    }
+
+    public void setWinner(String winner) {
+        this.winner = winner;
+    }
+
+    private String winner;
     private int topProgress;
 
     public int getTopProgress() {

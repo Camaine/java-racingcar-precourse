@@ -11,6 +11,7 @@ public class GameFinishService {
             winners = judgeTopRacer(model, winners, i);
         }
         winners = winners.substring(1);
+        model.setWinner(winners);
         GameView.printGameResult(model, winners);
     }
 

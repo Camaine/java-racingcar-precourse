@@ -15,7 +15,7 @@ public class GameController {
     private GameModel gameModel = new GameModel();
 
     public void getCarList(){
-        GameView.printGameInfo(GameNoticeModel.reqCarList);
+        GameView.printGameInfo(GameNoticeModel.REQ_CAR_LIST);
         if(prepareService.getCarNames(gameModel)){
             getRacingCnt();
             return;
@@ -25,9 +25,9 @@ public class GameController {
     }
 
     public void getRacingCnt(){
-        GameView.printGameInfo(GameNoticeModel.reqRacingCnt);
+        GameView.printGameInfo(GameNoticeModel.REQ_RACING_COUNT);
         if(prepareService.getRacingCnt(gameModel)){
-            GameView.printGameInfo(GameNoticeModel.printResultContext);
+            GameView.printGameInfo(GameNoticeModel.RACING_RESULT_CONTEXT);
             proceedService.initializeGameData(gameModel);
             playGame();
             return;

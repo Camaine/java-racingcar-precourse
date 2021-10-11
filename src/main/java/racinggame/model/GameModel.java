@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class GameModel {
 
-    public static final String progressBar = "-";
-    public static final String userProgressDivder = " : ";
-    public static final String winnerDivder = ",";
+    public static final String PROGRESS_BAR = "-";
+    public static final String USER_PROGRESS_DIVIDER = " : ";
+    public static final String WINNER_DIVIDER = ",";
 
     private String[] carList;
     private int racingCnt;

@@ -31,7 +31,7 @@ public class GameFinishService {
 
     public String judgeTopRacer(GameModel model, String winners, int index){
         if(model.getCarProceedData()[index] == model.getTopProgress()){
-            winners += GameModel.winnerDivder+model.getCarList()[index];
+            winners += GameModel.WINNER_DIVIDER+model.getCarList()[index];
         }
         return winners;
     }

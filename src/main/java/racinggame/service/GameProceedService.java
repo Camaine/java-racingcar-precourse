@@ -24,7 +24,7 @@ public class GameProceedService {
     public void moveForward(GameModel model,int carNo){
         if(Randoms.pickNumberInRange(0,9) >= 4){
             model.getCarProceedData()[carNo] += 1;
-            model.getCarProgressBarLists()[carNo] += GameModel.progressBar;
+            model.getCarProgressBarLists()[carNo] += GameModel.PROGRESS_BAR;
         }
     }
 }

@@ -12,14 +12,14 @@ public class GameView {
     }
 
     public static void printGameProgress(GameModel model, int carNo){
-        System.out.println(model.getCarList()[carNo] + GameModel.userProgressDivder + model.getCarProgressBarLists()[carNo]);
+        System.out.println(model.getCarList()[carNo] + GameModel.USER_PROGRESS_DIVIDER + model.getCarProgressBarLists()[carNo]);
         if(model.getCarList().length == carNo + 1){
             System.out.println("");
         }
     }
 
     public static void printGameResult(GameModel model, String winners){
-        System.out.println(GameNoticeModel.printWinnerContextPrefix + winners + GameNoticeModel.printWinnerContextPostfix);
+        System.out.println(GameNoticeModel.WINNER_CONTEXT_PREFIX + winners + GameNoticeModel.WINNER_CONTEXT_POSTFIX);
     }
 
     public static void printGameInfo(String info){

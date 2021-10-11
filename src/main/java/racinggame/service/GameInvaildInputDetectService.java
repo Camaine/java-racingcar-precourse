@@ -23,12 +23,17 @@ public class GameInvaildInputDetectService extends Exception{
         try{
             cnt = Integer.parseInt(racingCnt);
         }catch (Exception e){
-            GameView.printGameInfo(GameErrorModel.ERROR_CONTEXT + GameErrorModel.RACING_COUNT_NOT_EXISTS);
+            racingCntInvaildFormat();
             return;
         }
         if(cnt == 0){
             racingCntIsZero();
         }
+    }
+
+    private static void racingCntInvaildFormat(){
+        GameView.printGameInfo(GameErrorModel.ERROR_CONTEXT + GameErrorModel.RACING_COUNT_NOT_EXISTS);
+        throw new IllegalArgumentException(GameErrorModel.ERROR_CONTEXT + GameErrorModel.RACING_COUNT_NOT_EXISTS);
     }
 
     private static void racingCntIsZero(){
@@ -45,4 +50,5 @@ public class GameInvaildInputDetectService extends Exception{
         GameView.printGameInfo(GameErrorModel.ERROR_CONTEXT + GameErrorModel.CAR_NAME_NOT_EXIST);
         throw new IllegalArgumentException(GameErrorModel.ERROR_CONTEXT + GameErrorModel.CAR_NAME_NOT_EXIST);
     }
+
 }
